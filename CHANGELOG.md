@@ -22,9 +22,3 @@ A tested Go library of classic algorithms and data structures.
   race-enabled tests on the two supported Go releases. Monthly Dependabot
   updates.
 - `CLAUDE.md` and `.claude/settings.json` for Claude Code.
-
-### Removed
-
-- The fourteen per-language folders, the shared template and the generator
-  script. They held comments only.
-- Committed IDE settings (`.idea`) and a `.DS_Store` file.
