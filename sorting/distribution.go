@@ -3,7 +3,7 @@ package sorting
 import (
 	"slices"
 
-	"github.com/ZachariahAyers/algokit/internal/num"
+	"github.com/ZachariahAyers/algokit/v2/internal/num"
 )
 
 // Counting sorts integers with counting sort. Negative values are allowed.

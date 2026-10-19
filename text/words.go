@@ -5,7 +5,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/ZachariahAyers/algokit/combinatorics"
+	"github.com/ZachariahAyers/algokit/v2/combinatorics"
 )
 
 // Anagrams returns every distinct rearrangement of the runes of s, in

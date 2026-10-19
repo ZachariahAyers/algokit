@@ -10,7 +10,7 @@ import (
 	"cmp"
 	"math"
 
-	"github.com/ZachariahAyers/algokit/internal/num"
+	"github.com/ZachariahAyers/algokit/v2/internal/num"
 )
 
 // Linear scans s from the front and returns the first index holding target.

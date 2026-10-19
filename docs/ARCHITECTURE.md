@@ -1,6 +1,6 @@
 # Architecture
 
-algokit is one Go module, `github.com/ZachariahAyers/algokit`, with no
+algokit is one Go module, `github.com/ZachariahAyers/algokit/v2`, with no
 dependencies outside the standard library. Each package is one topic and can
 be imported on its own.
 
