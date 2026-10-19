@@ -62,14 +62,12 @@ algorithms against brute force on small random inputs. Structural invariants
 (BST order, AVL heights and balance, hash table load factor) are checked
 directly. Every overflow and domain boundary has a case on each side.
 
-## Mapping from v1
+## Catalog coverage
 
-v1 was a scaffold: fourteen language folders holding the same commented list
-of planned algorithms, with no implementations. v2 builds that list in Go.
-Items that Go's standard library or language already provides were not
+Items that Go's standard library or language already provides are not
 re-implemented:
 
-| v1 item | In v2 |
+| Catalog item | Where it is |
 | --- | --- |
 | `array/get-max-value`, `get-min-value` | `slices.Max`, `slices.Min` |
 | `comparators/*` | Go operators, `cmp.Compare`, `reflect.DeepEqual` |
@@ -89,6 +87,6 @@ re-implemented:
 | `search/breadth-first-search`, `depth-first-search` | `graph.Graph.BFS`, `graph.Graph.DFS` |
 | `sys/*` (CLI, files, processes, HTTP, timers, geometry) | out of scope: thin wrappers over `os`, `os/exec`, `net/http`, `time` |
 
-Four v1 names had no definition to build from and were left out:
+Four catalog names had no definition to build from and were left out:
 `number/get-sum-from`, `number/get-duplicates`, `number/is-unique` and
 `set/get-min-knapsack`.
