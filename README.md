@@ -9,7 +9,7 @@ A Go library of classic algorithms and data structures, for developers who want 
 - Sorting, searching, dynamic programming, combinatorics, number theory and string algorithms.
 - Lists, stack, queue, heap, BST and AVL trees, trie, hash table, set and weighted graph.
 - Generic over your own types, with iterators for traversals.
-- Time and space cost documented on every function.
+- Every algorithm documents its time and space cost.
 - Overflow and bad input reported as errors.
 - No dependencies outside the standard library.
 

@@ -18,8 +18,8 @@ Go 1.26 or newer; `go.mod` sets the minimum.
 
 - One topic per package. Shared numeric constraints live in `internal/num`;
   never redefine them.
-- Every exported function has a doc comment that states its behaviour, its
-  edge cases and its time and space complexity.
+- Every exported function has a doc comment that states its behaviour and its
+  edge cases. Every algorithm also states its time and space complexity.
 - Generic type parameters, not `any` plus type switches. Return `iter.Seq` for
   enumerations and traversals.
 - Report bad input with a sentinel error or a `false` result. Panic only where
@@ -36,5 +36,5 @@ Go 1.26 or newer; `go.mod` sets the minimum.
 
 1. `go vet ./...`, `go test -race ./...` and `golangci-lint run` all pass.
 2. New behaviour has a test that fails without the change.
-3. Doc comments state complexity; `docs/ARCHITECTURE.md` lists any new package.
+3. Algorithm doc comments state complexity; `docs/ARCHITECTURE.md` lists any new package.
 4. `CHANGELOG.md` has an entry under Unreleased for user-visible changes.
