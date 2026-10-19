@@ -6,7 +6,7 @@ import (
 )
 
 func equal2D[T comparable](a, b [][]T) bool {
-	return slices.EqualFunc(a, b, func(x, y []T) bool { return slices.Equal(x, y) })
+	return slices.EqualFunc(a, b, slices.Equal[[]T])
 }
 
 func TestCartesianProduct(t *testing.T) {
