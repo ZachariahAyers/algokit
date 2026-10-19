@@ -29,6 +29,12 @@ be imported on its own.
 `text` uses `combinatorics.Permutations` for anagrams; no other package imports
 another, apart from `internal/num`.
 
+The optional browser demo keeps its JSON validation and execution model in
+`internal/demo`. Its `cmd/wasm` adapter only bridges JavaScript to that model;
+all algorithm work still goes through the public `sorting` and `search`
+packages. `scripts/build-demo.sh` copies the current Go toolchain's
+`wasm_exec.js` and produces a static directory under `demo/dist`.
+
 ## Design rules
 
 - **Generics over interfaces.** Algorithms take `cmp.Ordered`, `comparable` or

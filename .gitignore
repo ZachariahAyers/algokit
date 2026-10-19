@@ -1,4 +1,5 @@
 /coverage.out
 /bin/
+/demo/dist/
 CLAUDE.local.md
 .claude/settings.local.json

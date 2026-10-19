@@ -16,6 +16,14 @@ jobs:
       - uses: actions/setup-go@v7
         with:
           go-version-file: go.mod
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Check demo JavaScript
+        run: |
+          node --check demo/runtime.js
+          node --check demo/app.js
+          node demo/runtime.test.js
       - uses: golangci/golangci-lint-action@v9
         with:
           version: v2.14.0
@@ -36,3 +44,36 @@ jobs:
         run: go vet ./...
       - name: Test
         run: go test -race -shuffle=on ./...
+
+  demo:
+    name: Publish demo site
+    needs: [lint, test]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      id-token: write
+      contents: read
+    concurrency:
+      group: demo
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+
+      - run: ./scripts/build-demo.sh
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: arn:aws:iam::993011736775:role/gh-deploy-opensource-algokit
+          aws-region: us-east-1
+
+      - name: Publish to ayers.repair/opensource/algokit/
+        run: |
+          aws s3 sync demo/dist/ s3://ayers-repair-site-993011736775/opensource/algokit/ \
+            --delete --cache-control "public, max-age=300" --only-show-errors
+          aws cloudfront create-invalidation --distribution-id E1CZIGG4O8R7UI \
+            --paths "/opensource/algokit/*" --query Invalidation.Id --output text

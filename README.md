@@ -34,6 +34,19 @@ go vet ./...
 golangci-lint run
 ```
 
+## Browser demo
+
+The standalone browser lab calls the library's exported sorting and search
+functions through a thin Go WebAssembly adapter. Build its static files with
+the installed Go toolchain:
+
+```bash
+./scripts/build-demo.sh
+```
+
+The output is written to `demo/dist/`. Serve that directory from any static
+host; no application server or JavaScript algorithm implementation is used.
+
 How it is put together: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## License

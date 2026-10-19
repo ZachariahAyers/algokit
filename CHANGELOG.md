@@ -5,6 +5,12 @@ and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
 
+### Added
+
+- Standalone browser lab that runs the public sorting and search algorithms
+  through Go WebAssembly, with bounded input validation and a reproducible
+  static build.
+
 ## 2.0.0 - 2026-10-19 (tag `v2.0.0`)
 
 A tested Go library of classic algorithms and data structures.
