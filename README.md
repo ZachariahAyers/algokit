@@ -1,20 +1,45 @@
-# Algokit
-[![GitHub Release](https://img.shields.io/github/release/zjayers/algokit.svg?style=flat)](https://github.com/zjayers/algokit/releases)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/zjayers/algokit.svg?style=flat)](https://github.com/zjayers/algokit/pulls)
-[![Issues](https://img.shields.io/github/issues-raw/zjayers/algokit.svg?maxAge=25000)](https://github.com/zjayers/algokit/issues)
+# algokit
 
-## Description
+[![CI](https://github.com/ZachariahAyers/algokit/actions/workflows/ci.yml/badge.svg)](https://github.com/ZachariahAyers/algokit/actions/workflows/ci.yml)
 
-> Work in progress
+A Go library of classic algorithms and data structures, for developers who want readable, tested implementations.
 
 ## Features
 
-> Work in progress
+- Sorting, searching, dynamic programming, combinatorics, number theory and string algorithms.
+- Lists, stack, queue, heap, BST and AVL trees, trie, hash table, set and weighted graph.
+- Generic over your own types, with iterators for traversals.
+- Time and space cost documented on every function.
+- Overflow and bad input reported as errors.
+- No dependencies outside the standard library.
 
-## Installation
+## Tech stack
 
-> Work in progress
+Go 1.26+, standard library, golangci-lint, GitHub Actions.
 
-## Usage
+## Getting started
 
-> Work in progress
+Requires Go 1.26 or newer.
+
+```bash
+go get github.com/ZachariahAyers/algokit/v2
+go doc github.com/ZachariahAyers/algokit/v2/tree
+```
+
+## Development
+
+```bash
+go test -race ./...
+go vet ./...
+golangci-lint run
+```
+
+How it is put together: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+## License
+
+GPL-3.0. See [LICENSE](LICENSE).
+
+---
+
+Built by [Zachariah Ayers](https://ayers.repair).
